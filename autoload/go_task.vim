@@ -7,6 +7,7 @@ function! go_task#open_selector() abort
   endfor
 
   execute 'vnew'
+  set buftype=nofile
   call append(0, s:tasks)
   execute line('$') . 'delete'
 
