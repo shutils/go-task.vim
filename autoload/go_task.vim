@@ -17,7 +17,6 @@ endfunction
 
 function! go_task#exec() abort
   let s:index = line('.') - 1
-  echom s:tasks
   execute 'new'
   execute 'term ' . 'task ' . s:tasks[s:index]
 endfunction
