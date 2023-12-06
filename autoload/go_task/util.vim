@@ -7,6 +7,9 @@ function! go_task#util#parse_args(args) abort
     if v =~ "^-selectorclose="
       let l:args_dict['selectorclose'] = substitute(v, "^-selectorclose=", "", "")
     endif
+    if v =~ "^-direction="
+      let l:args_dict['direction'] = substitute(v, "^-direction=", "", "")
+    endif
   endfor
   return l:args_dict
 endfunction
