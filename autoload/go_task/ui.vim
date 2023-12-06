@@ -3,6 +3,7 @@ function! go_task#ui#open_task_selector(tasks) abort
   let b:tasks = a:tasks
   call append(0, a:tasks)
   execute line('$') . 'delete'
+  normal! gg
   setlocal buftype=nofile
   setlocal nomodifiable
   setlocal nonumber
