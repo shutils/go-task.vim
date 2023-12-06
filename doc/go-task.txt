@@ -63,6 +63,9 @@ COMMAND					*go-task-command*
 
 	Default: left
 
+:GoTaskInit
+	Create a task file in the current directory. It will not be created
+	if it already exists.
 
 ------------------------------------------------------------------------------
 VARIABLES				*go-task-variables*

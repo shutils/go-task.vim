@@ -42,7 +42,7 @@ This plugin will implement the following functions.
 - [ ] Go to definition from the buffer.
 - [ ] Run last task command.
 - [ ] Multi-root workspace support.
-- [ ] Initialize a Taskfile in the current workspace.
+- [x] Initialize a Taskfile in the current workspace.
 
 ### Other feature
 
