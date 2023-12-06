@@ -60,7 +60,7 @@ This plugin will implement the following functions.
   - [x] Task selector window
   - [x] Task exec window
 - [ ] Custom keymap config
-- [ ] Custom task cmd name e.g. `go-task`
+- [x] Custom task cmd name e.g. `go-task`
 
 ## License
 

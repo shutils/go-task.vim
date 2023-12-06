@@ -3,22 +3,23 @@
 Author: shutils
 License: MIT license
 
-CONTENTS                                         *go-task-contents*
+CONTENTS				*go-task-contents*
 
-Introduction		|go-task-introduction|
-Install			|go-task-install|
-Examples		|go-task-examples|
-Params			|go-task-params|
+INTRODUCTION		|go-task-introduction|
+INSTALL			|go-task-install|
+USAGE			|go-task-usage|
+	COMMAND		|go-task-command|
+	VARIABLES	|go-task-variables|
 
 
 ==============================================================================
-INTRODUCTION                                 *go-task-introduction*
+INTRODUCTION				*go-task-introduction*
 
 This plugin is an integration of go-task.
 
 
 ==============================================================================
-INSTALL                                           *go-task-install*
+INSTALL					*go-task-install*
 
 Install it with your plugin manager. Below is an example of
 lazy.nvim.
@@ -29,12 +30,11 @@ require("lazy").setup({
 })
 <
 
-
 ==============================================================================
-USAGE                                            *go-task-usage*
+USAGE					*go-task-usage*
 
 ------------------------------------------------------------------------------
-COMMAND
+COMMAND					*go-task-command*
 
 							*:GoTask*
 :GoTask [-autoclose={true | false}] [-selectorclose={true | false}]
@@ -62,6 +62,18 @@ COMMAND
 	Sets the position of the task selector relative to the current window.
 
 	Default: left
+
+
+------------------------------------------------------------------------------
+VARIABLES				*go-task-variables*
+
+					*g:go_task_custom_task_cmd_name*
+	If this variable is set, the plugin will use the configured commands
+	to retrieve and execute tasks.
+	This variable is useful when the task command is installed with a
+	different name (e.g. go-task)
+
+	Default: v:null
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:

@@ -20,3 +20,10 @@ function! go_task#util#on_exit(job_id, status) abort
     exec "bd! " . bufnr
   endif
 endfunction
+
+function! go_task#util#get_custom_task_cmd() abort
+  if g:go_task_custom_task_cmd_name is v:null
+    return 'task'
+  endif
+  return g:go_task_custom_task_cmd_name
+endfunction
