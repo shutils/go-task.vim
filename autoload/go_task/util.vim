@@ -13,3 +13,10 @@ function! go_task#util#parse_args(args) abort
   endfor
   return l:args_dict
 endfunction
+
+function! go_task#util#on_exit(job_id, status) abort
+  let bufnr = ch_getbufnr(a:job_id, 'out')
+  if a:status == 0
+    exec "bd! " . bufnr
+  endif
+endfunction

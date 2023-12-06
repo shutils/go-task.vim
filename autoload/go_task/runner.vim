@@ -9,8 +9,19 @@ function! go_task#runner#exec() abort
     execute 'bd! ' . l:selector_burnr
   endif
 
-  execute 'term ' . 'task ' . l:tasks[l:index]
-  if l:config['autoclose'] == 'true'
-    call go_task#autocmd#_set_buffer_autoclose()
+  let cmd = 'task ' . l:tasks[l:index]
+  if !has('nvim')
+    if l:config['autoclose'] == 'true'
+      let job_id = term_start(cmd, {'exit_cb': 'go_task#util#on_exit', 'curwin': v:true})
+    else
+      let job_id = term_start(cmd, {'curwin': v:true})
+    endif
+  else
+    let cmd = 'term ' . cmd
+    execute cmd
+    if l:config['autoclose'] == 'true'
+      call go_task#autocmd#_set_buffer_autoclose()
+    endif
   endif
+
 endfunction
