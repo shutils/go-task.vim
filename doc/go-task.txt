@@ -33,15 +33,25 @@ require("lazy").setup({
 ==============================================================================
 USAGE                                            *go-task-usage*
 
-Reads a task file from the current directory and displays it in a buffer.
->
-	:GoTask
-<
+------------------------------------------------------------------------------
+COMMAND
 
-Pressing the enter key on the opened buffer will open a terminal in the new
-buffer and execute the command.
+							*:GoTask*
+:GoTask [-autoclose={true | false}]
+	Get tasks from the current directory and display them in a buffer.
 
-Pressing the q key closes the buffer.
+	Pressing the enter key on the opened buffer will open a terminal in
+	the new buffer and execute the command.
+
+	Pressing the q key closes the buffer.
+
+							*autoclose*
+	If true is passed to autoclose, the runner will be automatically
+	closed if the job completes successfully after executing the task.
+
+	Default: false
+
+
 
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:
