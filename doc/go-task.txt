@@ -37,7 +37,7 @@ USAGE                                            *go-task-usage*
 COMMAND
 
 							*:GoTask*
-:GoTask [-autoclose={true | false}]
+:GoTask [-autoclose={true | false}] [-selectorclose={true | false}]
 	Get tasks from the current directory and display them in a buffer.
 
 	Pressing the enter key on the opened buffer will open a terminal in
@@ -51,6 +51,11 @@ COMMAND
 
 	Default: false
 
+							*selectorclose*
+	If true is passed to selectorclose, the selector will be closed
+	after the task is executed.
+
+	Default: false
 
 
 ==============================================================================

@@ -4,6 +4,9 @@ function! go_task#util#parse_args(args) abort
     if v =~ "^-autoclose="
       let l:args_dict['autoclose'] = substitute(v, "^-autoclose=", "", "")
     endif
+    if v =~ "^-selectorclose="
+      let l:args_dict['selectorclose'] = substitute(v, "^-selectorclose=", "", "")
+    endif
   endfor
   return l:args_dict
 endfunction

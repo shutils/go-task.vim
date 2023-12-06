@@ -54,8 +54,8 @@ This plugin will implement the following functions.
   - [x] terminal command (default)
   - [ ] floaterm
   - [ ] toggleterm
-- [ ] Auto close feature
-  - [ ] Task display window
+- [x] Auto close feature
+  - [x] Task selector window
   - [x] Task exec window
 - [ ] Custom keymap config
 
