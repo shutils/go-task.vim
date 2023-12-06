@@ -56,7 +56,7 @@ This plugin will implement the following functions.
   - [ ] toggleterm
 - [ ] Auto close feature
   - [ ] Task display window
-  - [ ] Task exec window
+  - [x] Task exec window
 - [ ] Custom keymap config
 
 ## License
