@@ -1,8 +1,12 @@
-function! go_task#ui#open_task_selector(tasks, config) abort
+function! go_task#ui#open_task_selector(task_info, config) abort
   call go_task#ui#direction(a:config)
-  let b:tasks = a:tasks
+  let b:task_info = a:task_info
   let b:config = a:config
-  call append(0, a:tasks)
+  let task_names = []
+  for task_node in b:task_info['tasks']
+    call add(task_names, task_node['name'])
+  endfor
+  call append(0, task_names)
   execute line('$') . 'delete'
   normal! gg
   setlocal buftype=nofile

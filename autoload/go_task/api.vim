@@ -1,13 +1,9 @@
-function! go_task#api#get_task_list() abort
+function! go_task#api#get_task_info() abort
   let task_cmd = go_task#util#get_custom_task_cmd()
   let cmd = task_cmd . ' --json --list-all'
   let task_json = system(cmd)
   let decoded_task = json_decode(task_json)
-  let tasks = []
-  for v in decoded_task['tasks']
-    call add(tasks, v['name'])
-  endfor
-  return tasks
+  return decoded_task
 endfunction
 
 function! go_task#api#init_taskfile() abort

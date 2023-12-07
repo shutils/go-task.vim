@@ -1,7 +1,10 @@
 function! go_task#runner#exec() abort
-  let tasks = b:tasks
+  let task_cmd = go_task#util#get_custom_task_cmd()
+  let task_info = b:task_info
+  let location = task_info['location']
   let config = b:config
   let index = line('.') - 1
+  let task_name = task_info['tasks'][index]['name']
   let selector_burnr = bufnr("%")
   execute 'new'
 
@@ -9,7 +12,7 @@ function! go_task#runner#exec() abort
     execute 'bd! ' . selector_burnr
   endif
 
-  let cmd = 'task ' . tasks[index]
+  let cmd = task_cmd. ' --dir ' . location . ' ' . task_name
   if !has('nvim')
     if config['autoclose'] == 'true'
       let job_id = term_start(cmd, {'exit_cb': 'go_task#util#on_exit', 'curwin': v:true})
