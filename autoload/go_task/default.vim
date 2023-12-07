@@ -12,7 +12,7 @@ function! go_task#default#args_dict() abort
   endif
 
   if g:go_task_s_direction is v:null
-    let s_direction = 'left'
+    let s_direction = 'rightend'
   else
     let s_direction = g:go_task_s_direction
   endif

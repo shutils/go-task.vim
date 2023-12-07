@@ -38,8 +38,10 @@ COMMAND					*go-task-command*
 
 							*:GoTask*
 :GoTask [-r_autoclose={true | false}] [-s_autoclose={true | false}]
-	[-s_direction={left | right | top | bottom}]
-	[-r_direction={left | right | top | bottom}]
+	[-s_direction={left | right | leftend | rightend | on | under |
+		top | bottom}]
+	[-r_direction={left | right | leftend | rightend | on | under |
+		top | bottom}]
 	Get tasks from the current directory and display them in a buffer.
 
 	Pressing the enter key on the opened buffer will open a terminal in
@@ -62,7 +64,7 @@ COMMAND					*go-task-command*
 							*s_direction*
 	Sets the position of the task selector relative to the current window.
 
-	Default: left
+	Default: rightend
 
 							*r_direction*
 	Sets the position of the task runner relative to the selector window.

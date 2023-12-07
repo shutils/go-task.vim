@@ -17,14 +17,20 @@ endfunction
 function! go_task#selector#open_buffer(config) abort
   let direction = a:config["s_direction"]
   if direction == 'left'
-    execute 'vnew'
+    vertical aboveleft new
   elseif direction == 'right'
-    execute 'vnew'
-    wincmd L
+    vertical belowright new
+  elseif direction == 'leftend'
+    vertical topleft new
+  elseif direction == 'rightend'
+    vertical botright new
+  elseif direction == 'on'
+    horizontal aboveleft new
+  elseif direction == 'under'
+    horizontal belowright new
   elseif direction == 'top'
-    execute 'new'
+    topleft new
   elseif direction == 'bottom'
-    execute 'new'
-    wincmd R
+    botright new
   endif
 endfunction
