@@ -1,5 +1,5 @@
-function! go_task#ui#open_task_selector(task_info, config) abort
-  call go_task#ui#direction(a:config)
+function! go_task#selector#open_task_selector(task_info, config) abort
+  call go_task#selector#direction(a:config)
   let b:task_info = a:task_info
   let b:config = a:config
   let task_names = []
@@ -14,7 +14,7 @@ function! go_task#ui#open_task_selector(task_info, config) abort
   setlocal nonumber
 endfunction
 
-function! go_task#ui#direction(config) abort
+function! go_task#selector#direction(config) abort
   let direction = a:config["s_direction"]
   if direction == 'left'
     execute 'vnew'
