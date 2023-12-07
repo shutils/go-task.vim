@@ -37,9 +37,9 @@ USAGE					*go-task-usage*
 COMMAND					*go-task-command*
 
 							*:GoTask*
-:GoTask [-autoclose={true | false}] [-selectorclose={true | false}]
-	[-direction={left | right | top | bottom}]
-	[-rdirection={left | right | top | bottom}]
+:GoTask [-r_autoclose={true | false}] [-s_autoclose={true | false}]
+	[-s_direction={left | right | top | bottom}]
+	[-r_direction={left | right | top | bottom}]
 	Get tasks from the current directory and display them in a buffer.
 
 	Pressing the enter key on the opened buffer will open a terminal in
@@ -47,24 +47,24 @@ COMMAND					*go-task-command*
 
 	Pressing the q key closes the buffer.
 
-							*autoclose*
-	If true is passed to autoclose, the runner will be automatically
+							*r_autoclose*
+	If true is passed to r_autoclose, the runner will be automatically
 	closed if the job completes successfully after executing the task.
 
 	Default: false
 
-							*selectorclose*
-	If true is passed to selectorclose, the selector will be closed
+							*s_autoclose*
+	If true is passed to s_autoclose, the selector will be closed
 	after the task is executed.
 
 	Default: false
 
-							*direction*
+							*s_direction*
 	Sets the position of the task selector relative to the current window.
 
 	Default: left
 
-							*rdirection*
+							*r_direction*
 	Sets the position of the task runner relative to the selector window.
 
 	Default: bottom
@@ -85,32 +85,32 @@ VARIABLES				*go-task-variables*
 
 	Default: v:null
 
-					*g:go_task_autoclose*
-	If this variable is set, its value becomes the default for autoclose
+					*g:go_task_s_autoclose*
+	If this variable is set, its value becomes the default for s_autoclose
 	in the GoTask command.
 	If args are set in the GoTask command, those values will take
 	precedence.
 
 	Default: v:null
 
-					*g:go_task_selectorclose*
-	If this variable is set, its value becomes the default for selectorclose
+					*g:go_task_r_autoclose*
+	If this variable is set, its value becomes the default for r_autoclose
 	in the GoTask command.
 	If args are set in the GoTask command, those values will take
 	precedence.
 
 	Default: v:null
 
-					*g:go_task_direction*
-	If this variable is set, its value becomes the default for direction
+					*g:go_task_s_direction*
+	If this variable is set, its value becomes the default for s_direction
 	in the GoTask command.
 	If args are set in the GoTask command, those values will take
 	precedence.
 
 	Default: v:null
 
-					*g:go_task_rdirection*
-	If this variable is set, its value becomes the default for rdirection
+					*g:go_task_r_direction*
+	If this variable is set, its value becomes the default for r_direction
 	in the GoTask command.
 	If args are set in the GoTask command, those values will take
 	precedence.

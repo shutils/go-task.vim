@@ -1,33 +1,33 @@
 function! go_task#default#args_dict() abort
-  if g:go_task_autoclose is v:null
-    let autoclose = 'false'
+  if g:go_task_r_autoclose is v:null
+    let r_autoclose = 'false'
   else
-    let autoclose = g:go_task_autoclose
+    let r_autoclose = g:go_task_r_autoclose
   endif
 
-  if g:go_task_selectorclose is v:null
-    let selectorclose = 'false'
+  if g:go_task_s_autoclose is v:null
+    let s_autoclose = 'false'
   else
-    let selectorclose = g:go_task_selectorclose
+    let s_autoclose = g:go_task_s_autoclose
   endif
 
-  if g:go_task_direction is v:null
-    let direction = 'left'
+  if g:go_task_s_direction is v:null
+    let s_direction = 'left'
   else
-    let direction = g:go_task_direction
+    let s_direction = g:go_task_s_direction
   endif
 
-  if g:go_task_rdirection is v:null
-    let rdirection = 'bottom'
+  if g:go_task_r_direction is v:null
+    let r_direction = 'bottom'
   else
-    let rdirection = g:go_task_rdirection
+    let r_direction = g:go_task_r_direction
   endif
 
   let args_dict = {
-        \   "autoclose": autoclose,
-        \   "selectorclose": selectorclose,
-        \   "direction": direction,
-        \   "rdirection": rdirection,
+        \   "r_autoclose": r_autoclose,
+        \   "s_autoclose": s_autoclose,
+        \   "s_direction": s_direction,
+        \   "r_direction": r_direction,
         \ }
   return args_dict
 endfunction

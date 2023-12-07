@@ -1,17 +1,17 @@
 function! go_task#util#parse_args(args) abort
   let args_dict = go_task#default#args_dict()
   for v in a:args
-    if v =~ "^-autoclose="
-      let args_dict['autoclose'] = substitute(v, "^-autoclose=", "", "")
+    if v =~ "^-r_autoclose="
+      let args_dict['r_autoclose'] = substitute(v, "^-r_autoclose=", "", "")
     endif
-    if v =~ "^-selectorclose="
-      let args_dict['selectorclose'] = substitute(v, "^-selectorclose=", "", "")
+    if v =~ "^-s_autoclose="
+      let args_dict['s_autoclose'] = substitute(v, "^-s_autoclose=", "", "")
     endif
-    if v =~ "^-direction="
-      let args_dict['direction'] = substitute(v, "^-direction=", "", "")
+    if v =~ "^-s_direction="
+      let args_dict['s_direction'] = substitute(v, "^-s_direction=", "", "")
     endif
-    if v =~ "^-rdirection="
-      let args_dict['rdirection'] = substitute(v, "^-rdirection=", "", "")
+    if v =~ "^-r_direction="
+      let args_dict['r_direction'] = substitute(v, "^-r_direction=", "", "")
     endif
   endfor
   return args_dict

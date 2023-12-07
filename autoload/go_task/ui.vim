@@ -15,7 +15,7 @@ function! go_task#ui#open_task_selector(task_info, config) abort
 endfunction
 
 function! go_task#ui#direction(config) abort
-  let direction = a:config["direction"]
+  let direction = a:config["s_direction"]
   if direction == 'left'
     execute 'vnew'
   elseif direction == 'right'
