@@ -78,5 +78,29 @@ VARIABLES				*go-task-variables*
 
 	Default: v:null
 
+					*g:go_task_autoclose*
+	If this variable is set, its value becomes the default for autoclose
+	in the GoTask command.
+	If args are set in the GoTask command, those values will take
+	precedence.
+
+	Default: v:null
+
+					*g:go_task_selectorclose*
+	If this variable is set, its value becomes the default for selectorclose
+	in the GoTask command.
+	If args are set in the GoTask command, those values will take
+	precedence.
+
+	Default: v:null
+
+					*g:go_task_direction*
+	If this variable is set, its value becomes the default for direction
+	in the GoTask command.
+	If args are set in the GoTask command, those values will take
+	precedence.
+
+	Default: v:null
+
 ==============================================================================
 vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:
