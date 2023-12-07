@@ -47,10 +47,14 @@ This plugin will implement the following functions.
 ### Other feature
 
 - [ ] Select the direction in which tasks are display feature
-  - [x] split top
-  - [x] split bottom
-  - [x] vsplit left (default)
-  - [x] vsplit right
+  - [x] left
+  - [x] right
+  - [x] leftend
+  - [x] rightend (default)
+  - [x] on
+  - [x] under
+  - [x] top
+  - [x] bottom
   - [ ] float (neovim only)
 - [ ] Select runners to exec tasks feature
   - [x] terminal command (default)
