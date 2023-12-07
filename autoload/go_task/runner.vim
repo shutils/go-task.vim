@@ -6,7 +6,7 @@ function! go_task#runner#exec() abort
   let index = line('.') - 1
   let task_name = task_info['tasks'][index]['name']
   let selector_burnr = bufnr("%")
-  call go_task#runner#direction(config)
+  call go_task#runner#open_buffer(config)
 
   if config['s_autoclose'] == 'true'
     execute 'bd! ' . selector_burnr
@@ -25,13 +25,13 @@ function! go_task#runner#exec() abort
     execute cmd
     call go_task#keymap#set_runner_keymap()
     if config['r_autoclose'] == 'true'
-      call go_task#autocmd#_set_buffer_autoclose()
+      call go_task#autocmd#set_buffer_autoclose()
     endif
   endif
 
 endfunction
 
-function! go_task#runner#direction(config) abort
+function! go_task#runner#open_buffer(config) abort
   let direction = a:config["r_direction"]
   if direction == 'left'
     execute 'vnew'
