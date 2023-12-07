@@ -11,15 +11,15 @@ function! go_task#ui#open_task_selector(tasks, config) abort
 endfunction
 
 function! go_task#ui#direction(config) abort
-  let l:direction = a:config["direction"]
-  if l:direction == 'left'
+  let direction = a:config["direction"]
+  if direction == 'left'
     execute 'vnew'
-  elseif l:direction == 'right'
+  elseif direction == 'right'
     execute 'vnew'
     wincmd L
-  elseif l:direction == 'top'
+  elseif direction == 'top'
     execute 'new'
-  elseif l:direction == 'bottom'
+  elseif direction == 'bottom'
     execute 'new'
     wincmd R
   endif
