@@ -17,10 +17,17 @@ function! go_task#default#args_dict() abort
     let direction = g:go_task_direction
   endif
 
+  if g:go_task_rdirection is v:null
+    let rdirection = 'bottom'
+  else
+    let rdirection = g:go_task_rdirection
+  endif
+
   let args_dict = {
         \   "autoclose": autoclose,
         \   "selectorclose": selectorclose,
         \   "direction": direction,
+        \   "rdirection": rdirection,
         \ }
   return args_dict
 endfunction

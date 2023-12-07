@@ -10,6 +10,9 @@ function! go_task#util#parse_args(args) abort
     if v =~ "^-direction="
       let args_dict['direction'] = substitute(v, "^-direction=", "", "")
     endif
+    if v =~ "^-rdirection="
+      let args_dict['rdirection'] = substitute(v, "^-rdirection=", "", "")
+    endif
   endfor
   return args_dict
 endfunction

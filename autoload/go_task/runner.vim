@@ -6,7 +6,7 @@ function! go_task#runner#exec() abort
   let index = line('.') - 1
   let task_name = task_info['tasks'][index]['name']
   let selector_burnr = bufnr("%")
-  execute 'new'
+  call go_task#runner#direction(config)
 
   if config['selectorclose'] == 'true'
     execute 'bd! ' . selector_burnr
@@ -29,4 +29,19 @@ function! go_task#runner#exec() abort
     endif
   endif
 
+endfunction
+
+function! go_task#runner#direction(config) abort
+  let rdirection = a:config["rdirection"]
+  if rdirection == 'left'
+    execute 'vnew'
+  elseif rdirection == 'right'
+    execute 'vnew'
+    wincmd L
+  elseif rdirection == 'top'
+    execute 'new'
+  elseif rdirection == 'bottom'
+    execute 'new'
+    wincmd J
+  endif
 endfunction

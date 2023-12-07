@@ -5,3 +5,4 @@ let g:go_task_custom_task_cmd_name = v:null
 let g:go_task_autoclose = v:null
 let g:go_task_selectorclose = v:null
 let g:go_task_direction = v:null
+let g:go_task_rdirection = v:null

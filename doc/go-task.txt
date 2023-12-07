@@ -39,6 +39,7 @@ COMMAND					*go-task-command*
 							*:GoTask*
 :GoTask [-autoclose={true | false}] [-selectorclose={true | false}]
 	[-direction={left | right | top | bottom}]
+	[-rdirection={left | right | top | bottom}]
 	Get tasks from the current directory and display them in a buffer.
 
 	Pressing the enter key on the opened buffer will open a terminal in
@@ -63,6 +64,12 @@ COMMAND					*go-task-command*
 
 	Default: left
 
+							*rdirection*
+	Sets the position of the task runner relative to the selector window.
+
+	Default: bottom
+
+							*:GoTaskInit*
 :GoTaskInit
 	Create a task file in the current directory. It will not be created
 	if it already exists.
@@ -96,6 +103,14 @@ VARIABLES				*go-task-variables*
 
 					*g:go_task_direction*
 	If this variable is set, its value becomes the default for direction
+	in the GoTask command.
+	If args are set in the GoTask command, those values will take
+	precedence.
+
+	Default: v:null
+
+					*g:go_task_rdirection*
+	If this variable is set, its value becomes the default for rdirection
 	in the GoTask command.
 	If args are set in the GoTask command, those values will take
 	precedence.
