@@ -33,20 +33,3 @@ function! go_task#util#get_custom_task_cmd() abort
   endif
   return g:go_task_custom_task_cmd_name
 endfunction
-
-function! go_task#util#adjust_buffer_width() abort
-  let total_lines = line('$')
-  let max_width = 0
-  let padding = 6
-
-  for i in range(1, total_lines)
-      let line_width = strdisplaywidth(getline(i))
-      if line_width > max_width
-          let max_width = line_width
-      endif
-  endfor
-
-  let adjust_width = max_width + padding
-
-  execute 'vertical resize ' . adjust_width
-endfunction

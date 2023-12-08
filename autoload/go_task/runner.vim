@@ -6,7 +6,7 @@ function! go_task#runner#exec() abort
   let index = line('.') - 1
   let task_name = task_info['tasks'][index]['name']
   let selector_burnr = bufnr("%")
-  call go_task#runner#open_buffer(config)
+  call go_task#ui#open_buffer(config['r_direction'])
 
   if config['s_autoclose'] == 'true'
     execute 'bd! ' . selector_burnr
@@ -29,25 +29,4 @@ function! go_task#runner#exec() abort
     endif
   endif
 
-endfunction
-
-function! go_task#runner#open_buffer(config) abort
-  let direction = a:config["r_direction"]
-  if direction == 'left'
-    vertical aboveleft new
-  elseif direction == 'right'
-    vertical belowright new
-  elseif direction == 'leftend'
-    vertical topleft new
-  elseif direction == 'rightend'
-    vertical botright new
-  elseif direction == 'on'
-    horizontal aboveleft new
-  elseif direction == 'under'
-    horizontal belowright new
-  elseif direction == 'top'
-    topleft new
-  elseif direction == 'bottom'
-    botright new
-  endif
 endfunction
