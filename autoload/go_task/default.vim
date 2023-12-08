@@ -38,3 +38,30 @@ function! go_task#default#args_dict() abort
         \ }
   return args_dict
 endfunction
+
+function! go_task#default#args_cmp(arglead, cmdline, cursorpos) abort
+  if a:arglead == "-s_autoclose=" || a:arglead == "-r_autoclose=" || a:arglead == "-s_adjust"
+    return ["true", "false"]
+  elseif a:arglead == "-s_direction=" || a:arglead == "-r_direction="
+    return ["left", "right", "leftend", "rightend", "on", "under", "top", "bottom"]
+  endif
+  return go_task#default#add_prefix_suffix_to_args(go_task#default#args_list())
+endfunction
+
+function! go_task#default#args_list() abort
+  return [
+        \   "r_autoclose",
+        \   "s_autoclose",
+        \   "s_direction",
+        \   "r_direction",
+        \   "s_adjust",
+        \ ]
+endfunction
+
+function! go_task#default#add_prefix_suffix_to_args(args) abort
+  let result = []
+  for arg in a:args
+    call add(result, '-' . arg . '=')
+  endfor
+  return result
+endfunction
