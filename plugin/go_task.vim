@@ -6,3 +6,4 @@ let g:go_task_r_autoclose = v:null
 let g:go_task_s_autoclose = v:null
 let g:go_task_r_direction = v:null
 let g:go_task_s_direction = v:null
+let g:go_task_s_adjust = v:null

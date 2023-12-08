@@ -23,11 +23,18 @@ function! go_task#default#args_dict() abort
     let r_direction = g:go_task_r_direction
   endif
 
+  if g:go_task_s_adjust is v:null
+    let s_adjust = 'true'
+  else
+    let s_adjust = g:go_task_s_adjust
+  endif
+
   let args_dict = {
         \   "r_autoclose": r_autoclose,
         \   "s_autoclose": s_autoclose,
         \   "s_direction": s_direction,
         \   "r_direction": r_direction,
+        \   "s_adjust": s_adjust,
         \ }
   return args_dict
 endfunction

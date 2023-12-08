@@ -42,6 +42,7 @@ COMMAND					*go-task-command*
 		top | bottom}]
 	[-r_direction={left | right | leftend | rightend | on | under |
 		top | bottom}]
+	[-s_adjust={true | false}]
 	Get tasks from the current directory and display them in a buffer.
 
 	Pressing the enter key on the opened buffer will open a terminal in
@@ -70,6 +71,14 @@ COMMAND					*go-task-command*
 	Sets the position of the task runner relative to the selector window.
 
 	Default: bottom
+
+							*s_adjust*
+	Enables or disables selector automatic width adjustment.
+	NOTE:
+	In order not to destroy the existing buffer size, this feature is
+	enabled only when |s_direction| is left, right, leftend, or rightend.
+
+	Default: true
 
 							*:GoTaskInit*
 :GoTaskInit
@@ -113,6 +122,14 @@ VARIABLES				*go-task-variables*
 
 					*g:go_task_r_direction*
 	If this variable is set, its value becomes the default for r_direction
+	in the GoTask command.
+	If args are set in the GoTask command, those values will take
+	precedence.
+
+	Default: v:null
+
+					*g:go_task_s_adjust*
+	If this variable is set, its value becomes the default for s_adjust
 	in the GoTask command.
 	If args are set in the GoTask command, those values will take
 	precedence.

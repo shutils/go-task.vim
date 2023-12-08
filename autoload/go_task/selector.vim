@@ -9,6 +9,11 @@ function! go_task#selector#open_task_selector(task_info, config) abort
   call append(0, task_names)
   execute line('$') . 'delete'
   normal! gg
+
+  " In order not to destroy the existing buffer size
+  if index(['left', 'right', 'leftend', 'rightend'], b:config['s_direction']) != -1 && b:config['s_adjust'] == 'true'
+    call go_task#util#adjust_buffer_width()
+  endif
   setlocal buftype=nofile
   setlocal nomodifiable
   setlocal nonumber
