@@ -31,7 +31,7 @@ This command will open a new buffer and display your tasks.
 Place the cursor on the task you want to execute and press the enter key to execute it.
 Press the q key closes the buffer.
 
-## Loadmap
+## Roadmap
 
 This plugin will implement the following functions.
 
