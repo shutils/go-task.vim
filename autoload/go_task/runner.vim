@@ -23,6 +23,7 @@ function! go_task#runner#exec() abort
   else
     let cmd = 'term ' . cmd
     execute cmd
+    normal! G
     call go_task#keymap#set_runner_keymap()
     if config['r_autoclose'] == 'true'
       call go_task#autocmd#set_buffer_autoclose()
