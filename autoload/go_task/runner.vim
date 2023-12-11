@@ -7,6 +7,8 @@ function! go_task#runner#exec() abort
   let task_name = task_info['tasks'][index]['name']
   let selector_burnr = bufnr("%")
   call go_task#ui#open_buffer(config['r_direction'])
+  setlocal nomodifiable
+  setlocal nonumber
 
   if config['s_autoclose'] == 'true'
     execute 'bd! ' . selector_burnr
